@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>JS Portfolio</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+      .hero-bg {
+        background-image: url("https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+      }
+
+      .about-image {
+        background-image: url("https://images.unsplash.com/photo-1608889175253-8381867160d2?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+      }
+
+      /* Responsive Navbar (for mobile) */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            .nav-menu.active {
+                display: flex;
+            }
+        }
+
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+  </head>
+
+  <body class="bg-[#0f172a] text-gray-300 font-sans">
+
+    <nav class="fixed top-0 left-0 w-full z-50 bg-[#0f172a]/80 backdrop-blur-sm shadow-lg">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="#" class="text-xl font-bold text-white tracking-widest">JSR</a>
+        
+        <button class="md:hidden text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+
+        <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+            <a href="#about" class="hover:text-white transition-colors duration-300">About Me</a>
+            <a href="#past" class="hover:text-white transition-colors duration-300">My Past</a>
+            <a href="#projects" class="hover:text-white transition-colors duration-300">Projects</a>
+            <a href="#skills" class="hover:text-white transition-colors duration-300">Skills</a>
+            <a href="#contact" class="hover:text-white transition-colors duration-300">Contact</a>
+        </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-[#0f172a] py-4 px-6">
+        <div class="flex flex-col space-y-4 text-sm font-medium">
+            <a href="#about" class="hover:text-white transition-colors duration-300">About Me</a>
+            <a href="#past" class="hover:text-white transition-colors duration-300">My Past</a>
+            <a href="#projects" class="hover:text-white transition-colors duration-300">Projects</a>
+            <a href="#skills" class="hover:text-white transition-colors duration-300">Skills</a>
+            <a href="#contact" class="hover:text-white transition-colors duration-300">Contact</a>
+        </div>
+    </div>
+</nav>
+
+    <section id="hero" class="hero-bg bg-cover bg-center h-screen flex items-center justify-center relative">
+        <div class="absolute inset-0 bg-black opacity-60"></div>
+        <div class="relative text-center text-white px-6">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Hi, I am Jittawee Sripattamakulkit</h1>
+            <p class="text-sm md:text-lg max-w-2xl mx-auto mb-8">
+                A graduate of Generation's Junior Software Developer Bootcamp with hands-on experience in full-stack web development using the MERN stack. Completed a coding bootcamp with team-based and solo projects, applying both frontend and backend development with agile practices. Eager to contribute to a development or QA team and continue growing as a tech professional.
+            </p>
+        </div>
+        
+        <div class="absolute bottom-6 right-6 space-x-2 md:space-x-4">
+            <a href="https://github.com/JSR-SRT" target="_blank" class="text-white hover:text-gray-400 transition-colors duration-300">
+                <img src="images/github-logo.png" class="w-8 h-8 md:w-10 md:h-10" alt="GitHub"/>
+            </a>
+            <a href="https://linkedin.com/in/jittawee" target="_blank" class="text-white hover:text-gray-400 transition-colors duration-300">
+                <img src="images/linkedin-logo.png" class="w-8 h-8 md:w-10 md:h-10" alt="LinkedIn"/>
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="container mx-auto px-6 py-16 md:py-20">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-2">ABOUT ME</h2>
+            <p class="text-lg md:text-sm font-light text-gray-500 tracking-[0.3em] md:tracking-[0.5em] uppercase">JS</p>
+        </div>
+        <div class="flex flex-col md:flex-row items-center md:space-x-12 bg-[#1c2436] p-6 md:p-8 rounded-xl shadow-lg">
+            <div class="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
+                <img 
+                src="images/my-profile-pic.jpg" 
+                alt="Your Profile Picture" 
+                class="w-80 h-80 md:w-95 md:h-100 rounded-full shadow-2xl border-4 border-gray-700 object-fit object-contain"
+            >
+            </div>
+            <div class="w-full md:w-1/2">
+                <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Career Switcher</h3>
+                <p class="text-sm md:text-base text-gray-400 mb-6 leading-relaxed">
+                    Prior to transitioning into tech, I held cross-functional roles including Solutions Coordinator, Executive Assistant, QA for ISO/IEC 27001 (Information Security), and BA Support/Translator. These roles developed my strengths in problem-solving, documentation, attention to detail, and stakeholder communication skills. I now leverage in writing clean, maintainable code and collaborating effectively in software teams. Eager to contribute to a development or QA team and continue growing as a tech professional.
+                </p>
+                
+                <a href="#" download class="inline-block px-6 py-3 md:px-8 bg-teal-200 text-black text-sm md:text-base font-bold rounded-full hover:bg-teal-500 transition-colors duration-300">
+                    My CV is here
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="past" class="container mx-auto px-6 py-16 md:py-20">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-2">MY PAST</h2>
+            <p class="text-lg md:text-sm font-light text-gray-500 tracking-[0.3em] md:tracking-[0.5em] uppercase">EXPERIENCE</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-[#1c2436] p-8 rounded-xl text-center">
+                <div class="flex justify-center mb-4"><img src="" width="50" height="50" alt="Company Logo"></div>
+                <h3 class="text-xl font-bold text-white mb-2">Solution Coordinator </h3>
+                <p class="text-sm text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut enim ut libero.</p>
+            </div>
+            <div class="bg-[#1c2436] p-8 rounded-xl text-center">
+                <div class="flex justify-center mb-4"><img src="" width="50" height="50" alt="Company Logo"></div>
+                <h3 class="text-xl font-bold text-white mb-2">Assistant to Director</h3>
+                <p class="text-sm text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut enim ut libero.</p>
+            </div>
+            <div class="bg-[#1c2436] p-8 rounded-xl text-center">
+                <div class="flex justify-center mb-4"><img src="" width="50" height="50" alt="Company Logo"></div>
+                <h3 class="text-xl font-bold text-white mb-2">Quality Assurance </h3>
+                <p class="text-sm text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut enim ut libero.</p>
+            </div>
+            <div class="bg-[#1c2436] p-8 rounded-xl text-center">
+                <div class="flex justify-center mb-4"><img src="" width="50" height="50" alt="Company Logo"></div>
+                <h3 class="text-xl font-bold text-white mb-2">Business Support / Translator </h3>
+                <p class="text-sm text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut enim ut libero.</p>
+            </div>
+            
+        </div>
+    </section>
+
+    <section id="projects" class="container mx-auto px-6 py-16 md:py-20">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-2">PROJECTS</h2>
+            <p class="text-xs md:text-sm font-light text-gray-500 tracking-[0.3em] md:tracking-[0.5em] uppercase">MY LATEST WORKS</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-[#1c2436] rounded-xl overflow-hidden shadow-lg">
+                <img src="https://via.placeholder.com/600x400" alt="Project 1" class="w-full h-auto object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white">Project Title 1</h3>
+                    <p class="text-sm text-gray-400">Short description of project...</p>
+                </div>
+            </div>
+            <div class="bg-[#1c2436] rounded-xl overflow-hidden shadow-lg">
+                <img src="https://via.placeholder.com/600x400" alt="Project 2" class="w-full h-auto object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white">Project Title 2</h3>
+                    <p class="text-sm text-gray-400">Short description of project...</p>
+                </div>
+            </div>
+            <div class="bg-[#1c2436] rounded-xl overflow-hidden shadow-lg">
+                <img src="https://via.placeholder.com/600x400" alt="Project 3" class="w-full h-auto object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white">Project Title 3</h3>
+                    <p class="text-sm text-gray-400">Short description of project...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="container mx-auto px-6 py-16 md:py-20">
+    <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-2">SKILLS</h2>
+        <p class="text-xl md:text-sm font-light text-gray-500 tracking-[0.3em] md:tracking-[0.5em] uppercase">MY ABILITIES</p>
+    </div>
+    <div class="flex flex-col md:flex-row md:space-x-12">
+
+        <div class="w-full md:w-1/2 mb-8 md:mb-0 space-y-6">
+            <h3 class="text-xl font-bold text-gray-200 mb-4">Technical Skills</h3>
+            <div>
+                <div class="flex justify-between items-center mb-1">
+                    <span class="text-white font-bold">JavaScript</span>
+                    <span class="text-sm text-gray-400">50%</span>
+                </div>
+                <div class="w-full bg-gray-700 rounded-full h-2">
+                    <div class="bg-teal-200 h-2 rounded-full" style="width: 50%;"></div>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between items-center mb-1">
+                    <span class="text-white font-bold">TailwindCSS</span>
+                    <span class="text-sm text-gray-400">45%</span>
+                </div>
+                <div class="w-full bg-gray-700 rounded-full h-2">
+                    <div class="bg-teal-200 h-2 rounded-full" style="width: 45%;"></div>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between items-center mb-1">
+                    <span class="text-white font-bold">React</span>
+                    <span class="text-sm text-gray-400">55%</span>
+                </div>
+                <div class="w-full bg-gray-700 rounded-full h-2">
+                    <div class="bg-teal-200 h-2 rounded-full" style="width: 55%;"></div>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between items-center mb-1">
+                    <span class="text-white font-bold">MongoDB</span>
+                    <span class="text-sm text-gray-400">5%</span>
+                </div>
+                <div class="w-full bg-gray-700 rounded-full h-2">
+                    <div class="bg-teal-200 h-2 rounded-full" style="width: 5%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full md:w-1/2 space-y-6">
+            <h3 class="text-xl font-bold text-gray-200 mb-4">Behavioral Skills</h3>
+            <div>
+                <div class="flex justify-between items-center mb-1">
+                    <span class="text-white font-bold">Detail-oriented</span>
+                    <span class="text-sm text-gray-400">70%</span>
+                </div>
+                <div class="w-full bg-gray-700 rounded-full h-2">
+                    <div class="bg-teal-200 h-2 rounded-full" style="width: 70%;"></div>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between items-center mb-1">
+                    <span class="text-white font-bold">Teamwork</span>
+                    <span class="text-sm text-gray-400">80%</span>
+                </div>
+                <div class="w-full bg-gray-700 rounded-full h-2">
+                    <div class="bg-teal-200 h-2 rounded-full" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between items-center mb-1">
+                    <span class="text-white font-bold">Growth Mindset</span>
+                    <span class="text-sm text-gray-400">65%</span>
+                </div>
+                <div class="w-full bg-gray-700 rounded-full h-2">
+                    <div class="bg-teal-200 h-2 rounded-full" style="width: 65%;"></div>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between items-center mb-1">
+                    <span class="text-white font-bold">Adaptability</span>
+                    <span class="text-sm text-gray-400">90%</span>
+                </div>
+                <div class="w-full bg-gray-700 rounded-full h-2">
+                    <div class="bg-teal-200 h-2 rounded-full" style="width: 90%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="contact" class="container mx-auto px-6 py-16 md:py-20 text-center">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-2">CONTACT</h2>
+        <p class="text-xl md:text-sm font-light text-gray-500 tracking-[0.3em] md:tracking-[0.5em] uppercase">GET IN TOUCH</p>
+        <div class="mt-8">
+            <p class="text-base md:text-lg text-white">Email: <a href="my email" class="text-teal-200 hover:underline">jtwe.esr@gmail.com</a></p>
+            <p class="text-base md:text-lg text-white">Phone: <a href="my phone num" class="text-teal-200 hover:underline">084-9432284</a></p>
+            <p class="text-base md:text-lg text-white">Address: <a href="my address" class="text-teal-200 hover:underline">Bangkok, Thailand</a></p>
+        </div>
+        <p class="mt-8 text-gray-500 text-sm"></p>
+    </section>
+    
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+  </body>
+</html>
